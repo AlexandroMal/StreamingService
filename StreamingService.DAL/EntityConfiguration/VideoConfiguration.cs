@@ -18,7 +18,6 @@ namespace StreamingService.DAL.EntityConfiguration
             builder.Property(x => x.Name).IsRequired().HasMaxLength(100);
             builder.Property(x => x.UploadVideo).IsRequired();
             builder.Property(x => x.FilePath).IsRequired();
-            builder.Property(x => x.VideoSize);
 
         }
     }
