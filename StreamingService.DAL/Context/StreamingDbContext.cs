@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using StreamingService.DAL.Entities;
 using StreamingService.DAL.EntityConfiguration;
 using System;
@@ -15,9 +16,12 @@ namespace StreamingService.DAL.Context
             : base(options) { }
 
         public DbSet<Video> Videos { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<StreamPost> Streams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new VideoConfiguration());
 
             base.OnModelCreating(modelBuilder);

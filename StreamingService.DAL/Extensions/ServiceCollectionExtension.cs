@@ -19,7 +19,6 @@ namespace StreamingService.DAL.Extensions
 
         private static void AddDatabase(this IServiceCollection services, IConfiguration configuration)
         {
-            // add database, use sql server
             services.AddDbContext<StreamingDbContext>(options =>
             {
                 options.UseSqlServer(configuration["ConnectionString"]);
