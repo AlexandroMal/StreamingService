@@ -9,6 +9,8 @@ namespace StreamingService.DAL.Interfaces
 {
     public interface IVideoRepository : IBaseRepository<Video>
     {
+        public Task<Video> GetVideoByStreamPostIdAsync(Guid StreamId);
+        public Task<ICollection<Video>> GetVideosByStreamPostIdAsync(Guid StreamId);
 
     }
 }
